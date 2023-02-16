@@ -13,7 +13,14 @@ SRC		= 	ft_bzero.c \
 			ft_strlcat.c \
 			ft_toupper.c \
 			ft_tolower.c \
-			ft_strchr.c
+			ft_strchr.c \
+			ft_strrchr.c \
+			ft_strncmp.c \
+			ft_memchr.c \
+			ft_memcmp.c \
+			ft_strnstr.c \
+			ft_atoi.c \
+			ft_calloc.c
 OBJS	= 	$(addprefix $(BIN_DIR)/, $(SRC:.c=.o))
 NAME	= 	libft.a
 CFLAGS	= 	-Wall -Werror -Wextra
@@ -27,8 +34,7 @@ VPATH	=	.
 all : $(NAME)
 
 $(BIN_DIR)/%.o : %.c
-	@$(CC) $(CFLAGS) -c $< -o $@
-	@echo $(<:.c=.o) is compiled
+	$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME) : $(BIN_DIR) $(OBJS)
 	$(LIBC) $@ $(OBJS)

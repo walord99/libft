@@ -6,7 +6,7 @@
 /*   By: bplante <bplante@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 18:35:45 by bplante           #+#    #+#             */
-/*   Updated: 2023/02/14 18:44:13 by bplante          ###   ########.fr       */
+/*   Updated: 2023/02/16 13:40:35 by bplante          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strchr(const char *str, int c)
 	while (1)
 	{
 		if (str[i] == (unsigned char)c)
-			return ((char *)str + i);
+			return ((char *)&str[i]);
 		if (!str[i])
 			return (NULL);
 		i++;

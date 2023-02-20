@@ -10,9 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "ft_isalnum.c"
-// #include "ft_isalpha.c"
-// #include "ft_isdigit.c"
 #include "libft.h"
 
 static int	is_space(char c);
@@ -44,14 +41,7 @@ int	ft_atoi(const char *str)
 
 static int	is_space(char c)
 {
-	if (c >= 1 && c <= 32)
+	if ((c >= 1 && c <= 32 ) && c != '\e')
 		return (1);
 	return (0);
 }
-
-// int	main(void)
-// {
-// 	int	i;
-
-// 	i = ft_atoi("\t\n\r\v\f  469 \n");
-// }

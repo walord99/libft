@@ -37,5 +37,6 @@ char	*ft_strnstr(const char *heystack, const char *needle, size_t len);
 int		ft_atoi(const char *str);
 void	*ft_calloc(size_t n, size_t size);
 char	*ft_strdup(const char *s1);
+char    *ft_substr(char const *s, unsigned int start, size_t len);
 
 #endif

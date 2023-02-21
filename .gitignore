@@ -5,4 +5,9 @@
 .vscode
 *.dSYM
 .DS_Store
-bin/*.o
+bin
+*.out
+testmain.c
+/debug_dir
+*.a
+

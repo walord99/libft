@@ -16,32 +16,31 @@ static int	is_space(char c);
 
 int	ft_atoi(const char *str)
 {
-	int	result;
-	int	sign;
-	int	i;
+	int			i;
+	long int	nb;
+	int			sign;
 
-	result = 0;
-	sign = 1;
 	i = 0;
-	while (is_space(str[i]))
-		i++;
-	if (str[i] == '-')
-		sign = -1;
-	if (str[i] == '-' || str[i] == '+')
-		i++;
-	while (ft_isdigit(str[i]))
+	nb = 0;
+	sign = 1;
+	if (str)
 	{
-		result = result + (str[i] - '0');
-		if (ft_isdigit(str[i + 1]))
-			result = result * 10;
-		i++;
+		while (is_space(str[i]))
+			i++;
+		if (str[i] == '-')
+			sign = -1;
+		if (str[i] == '-' || str[i] == '+')
+			i++;
+		while (ft_isdigit(str[i]))
+			nb = nb * 10 + str[i++] - '0';
 	}
-	return (result * sign);
+	return (sign * nb);
 }
 
 static int	is_space(char c)
 {
-	if ((c >= 1 && c <= 32 ) && c != '\e')
+	if (c == ' ' || c == '\f' || c == '\t'
+		|| c == '\n' || c == '\r' || c == '\v')
 		return (1);
 	return (0);
 }

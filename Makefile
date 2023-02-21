@@ -66,7 +66,7 @@ debug: debug_dir $(DEBUG_OBJS) $(NAME)
 	gcc -g testmain.c libft.a
 	lldb a.out
 
-so: $(BIN_DIR)
-	$(CC) -fPIC $(CFLAGS) $(SRC)
-	gcc -nostartfiles -shared -o libft.so $(OBJS)
+so:
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC) -c
+	gcc -nostartfiles -shared -o libft.so $(SRC:.c=.o)
 	

@@ -3,6 +3,8 @@
 char    *ft_strjoin(char const *s1, char const *s2)
 {
     char *str = ft_calloc(ft_strlen(s1) + ft_strlen(s2) + 1, 1);
+    if (str == NULL)
+        return NULL;
     int i = 0;
     if (s1)
     {

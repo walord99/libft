@@ -10,4 +10,4 @@ bin
 testmain.c
 /debug_dir
 *.a
-
+build

@@ -18,7 +18,7 @@ char	*ft_strrchr(const char *str, int c)
 	unsigned char	tlf;
 
 	tlf = c;
-	i = strlen(str);
+	i = ft_strlen(str);
 	while (i >= 0)
 	{
 		if (str[i] == tlf)
@@ -27,10 +27,3 @@ char	*ft_strrchr(const char *str, int c)
 	}
 	return (NULL);
 }
-
-// #include "ft_strchr.c"
-
-// int	main(void)
-// {
-// 	ft_strrchr("tste", '\0');
-// }

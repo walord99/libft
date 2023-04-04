@@ -6,7 +6,7 @@
 #    By: Ben <benplante99@gmail.com>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/04 12:49:55 by Ben               #+#    #+#              #
-#    Updated: 2023/04/04 12:49:57 by Ben              ###   ########.fr        #
+#    Updated: 2023/04/04 13:06:13 by Ben              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,9 @@ SRC			= 	ft_bzero.c \
 				ft_putchar_fd.c \
 				ft_putstr_fd.c \
 				ft_putendl_fd.c \
-				ft_putnbr_fd.c
+				ft_putnbr_fd.c \
+				ft_putstr.c \
+				ft_gonextword.c
 
 BONUS_SRC	= 	ft_lstnew_bonus.c \
 				ft_lstadd_front_bonus.c \

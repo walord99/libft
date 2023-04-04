@@ -6,7 +6,7 @@
 /*   By: Ben <benplante99@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 13:51:05 by bplante           #+#    #+#             */
-/*   Updated: 2023/04/04 13:01:10 by Ben              ###   ########.fr       */
+/*   Updated: 2023/04/04 13:04:28 by Ben              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,6 @@ void				ft_putstr_fd(char *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
 void				ft_putendl_fd(char *s, int fd);
 char				ft_num_to_char(int n);
-
-int					ft_go_next_word(const char *str, char delemiter);
 
 typedef struct s_list
 {

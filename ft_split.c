@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Ben <benplante99@gmail.com>                +#+  +:+       +#+        */
+/*   By: bplante <bplante@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 12:49:28 by Ben               #+#    #+#             */
-/*   Updated: 2023/04/04 13:02:18 by Ben              ###   ########.fr       */
+/*   Updated: 2023/04/05 15:31:58 by bplante          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ static int	go_first_word(const char *str, char delemiter)
 	i = 0;
 	if (str[i] && str[i] != delemiter)
 		return (i);
-	while (str[i] == delemiter)
+	while (str[i] && str[i] == delemiter)
 		i++;
 	return (i);
 }

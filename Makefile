@@ -6,7 +6,7 @@
 #    By: Ben <benplante99@gmail.com>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/04 12:49:55 by Ben               #+#    #+#              #
-#    Updated: 2023/04/04 13:06:13 by Ben              ###   ########.fr        #
+#    Updated: 2023/04/16 00:52:21 by Ben              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -74,9 +74,9 @@ all : $(NAME)
 
 $(BIN_DIR)/%.o : %.c
 	$(CC) $(CFLAGS) -c $< -o $@
+	$(LIBC) $(NAME) $@
 
 $(NAME) : $(BIN_DIR) $(OBJS)
-	$(LIBC) $@ $(OBJS)
 
 $(BIN_DIR):
 	mkdir -p $(BIN_DIR)
@@ -89,8 +89,7 @@ fclean : clean
 
 re: fclean all
 
-bonus: $(NAME) $(BIN_DIR) $(BONUS_OBJS)
-	$(LIBC) libft.a $(BONUS_OBJS)
+bonus: $(NAME) $(BONUS_OBJS)
 
 debug_dir/%.o : %.c
 		$(CC) $(CFLAGS) -c $< -o $@ -g

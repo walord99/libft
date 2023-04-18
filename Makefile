@@ -6,7 +6,7 @@
 #    By: bplante <bplante@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/04 12:49:55 by Ben               #+#    #+#              #
-#    Updated: 2023/04/18 13:26:50 by bplante          ###   ########.fr        #
+#    Updated: 2023/04/18 14:01:33 by bplante          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -73,7 +73,7 @@ VPATH		=	.
 all : $(NAME)
 
 $(BIN_DIR)/%.o : %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@ -g
 
 $(NAME) : $(BIN_DIR) $(OBJS)
 	$(LIBC) $@ $(OBJS)

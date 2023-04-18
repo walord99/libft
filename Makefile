@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: Ben <benplante99@gmail.com>                +#+  +:+       +#+         #
+#    By: bplante <bplante@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/04 12:49:55 by Ben               #+#    #+#              #
-#    Updated: 2023/04/04 13:06:13 by Ben              ###   ########.fr        #
+#    Updated: 2023/04/11 15:25:37 by bplante          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -89,8 +89,8 @@ fclean : clean
 
 re: fclean all
 
-bonus: $(NAME) $(BIN_DIR) $(BONUS_OBJS)
-	$(LIBC) libft.a $(BONUS_OBJS)
+bonus: $(NAME) $(BONUS_OBJS)
+	$(LIBC) $(NAME) $(BONUS_OBJS)
 
 debug_dir/%.o : %.c
 		$(CC) $(CFLAGS) -c $< -o $@ -g

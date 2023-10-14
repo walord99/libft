@@ -3,20 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Ben <benplante99@gmail.com>                +#+  +:+       +#+        */
+/*   By: walord <walord@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 12:49:06 by Ben               #+#    #+#             */
-/*   Updated: 2023/04/04 12:49:06 by Ben              ###   ########.fr       */
+/*   Updated: 2023/10/13 21:28:10 by walord           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstadd_front(t_list **list, t_list *new)
+t_list	*ft_lstadd_front(t_list **list, void *content)
 {
-	if (!new)
+	t_list *new_front;
+	new_front = ft_lstnew(content);
+	if (!new_front)
 		return (NULL);
-	new->next = *list;
-	*list = new;
-	return (new);
+	new_front->next = *list;
+	*list = new_front;
+	return (new_front);
 }

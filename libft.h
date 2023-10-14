@@ -6,7 +6,7 @@
 /*   By: walord <walord@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 13:51:05 by bplante           #+#    #+#             */
-/*   Updated: 2023/10/13 20:52:49 by walord           ###   ########.fr       */
+/*   Updated: 2023/10/13 21:32:32 by walord           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,15 +63,14 @@ typedef struct s_list
 }					t_list;
 
 t_list				*ft_lstnew(void *content);
-t_list				*ft_lstadd_front(t_list **list, t_list *new);
+t_list				*ft_lstadd_front(t_list **list, void *content);
 t_list				*ft_lstlast(t_list *lst);
 int					ft_lstsize(t_list *lst);
-void				ft_lstadd_back(t_list **lst, t_list *new);
+void				ft_lstadd_back(t_list **lst, void *content);
 void				ft_lstdelone(t_list *lst, void (*del)(void *));
 void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
-t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
-						void (*del)(void *));
+t_list				*ft_lstmap(t_list *lst, void *(*f)(void *));
 
 typedef struct s_options
 {

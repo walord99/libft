@@ -6,7 +6,7 @@
 #    By: walord <walord@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/04 12:49:55 by Ben               #+#    #+#              #
-#    Updated: 2023/10/13 20:33:00 by walord           ###   ########.fr        #
+#    Updated: 2023/10/13 20:53:40 by walord           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,7 +62,10 @@ SRC			=	ft_bzero.c \
 				ft_printf.c \
 				ft_printf_utils.c \
 				ft_printf_options.c \
-				ft_printf_convertion.c
+				ft_printf_convertion.c \
+				\
+				get_next_line.c \
+				get_next_line_utils.c
 
 OBJS		=	$(addprefix $(OBJ_DIR)/, $(SRC:.c=.o))
 NAME		=	libft.a

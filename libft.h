@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bplante <bplante@student.42.fr>            +#+  +:+       +#+        */
+/*   By: walord <walord@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 13:51:05 by bplante           #+#    #+#             */
-/*   Updated: 2023/04/18 13:38:23 by bplante          ###   ########.fr       */
+/*   Updated: 2023/10/13 20:52:49 by walord           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,4 +98,9 @@ char		*arg_to_ptr(void *ptr);
 int			ft_putstr_e(char *str, t_options *options);
 int			format(va_list args, char **str, int char_amount);
 char		*specifier_selector(va_list args, char c);
+
+# define BUFFER_SIZE 20
+
+char	*get_next_line(int fd);
+char	*ft_strjoin_free(char *s1, char *s2);
 #endif

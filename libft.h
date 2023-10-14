@@ -12,7 +12,9 @@
 
 #ifndef LIBFT_H
 # define LIBFT_H
-# include <string.h>
+# include <stdarg.h>
+# include <stdlib.h>
+# include <unistd.h>
 
 int					ft_isalpha(int c);
 int					ft_isdigit(int c);
@@ -71,4 +73,29 @@ void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
 
+typedef struct s_options
+{
+	char	flag;
+	int		width;
+	int		precision;
+	char	specifier;
+}			t_options;
+
+int			ft_printf(const char *str, ...);
+int			get_flag(char *str, t_options *options);
+int			get_width(char *str, t_options *options);
+int			get_precision(char *str, t_options *options);
+int			get_specifier(char *str, t_options *options);
+int			get_options(char *str, t_options *options);
+int			number_char_amount(int n);
+char		*char_to_str(char c);
+char		*arg_to_int(int i);
+char		*arg_to_str(char *str);
+char		*arg_to_uint_hex(unsigned long num, int is_caps);
+char		num_to_hex(int num, int is_caps);
+char		*arg_to_uint(unsigned int num);
+char		*arg_to_ptr(void *ptr);
+int			ft_putstr_e(char *str, t_options *options);
+int			format(va_list args, char **str, int char_amount);
+char		*specifier_selector(va_list args, char c);
 #endif

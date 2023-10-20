@@ -3,26 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: walord <walord@student.42.fr>              +#+  +:+       +#+        */
+/*   By: bplante <bplante@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 10:18:33 by bplante           #+#    #+#             */
-/*   Updated: 2023/10/13 20:51:53 by walord           ###   ########.fr       */
+/*   Updated: 2023/10/20 19:10:33 by bplante          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	*get_line(char *buffer);
+static char	*get_line(char *buffer, bool include_NL);
 static char	*remove_line(char *buffer);
 static char	*read_to_buff(char *buffer, int fd);
 
-char	*get_next_line(int fd)
+char	*get_next_line(int fd, bool include_NL)
 {
 	static char	*buffer;
 	char		*line;
 
 	buffer = read_to_buff(buffer, fd);
-	line = get_line(buffer);
+	line = get_line(buffer, include_NL);
 	buffer = remove_line(buffer);
 	return (line);
 }
@@ -52,7 +52,7 @@ char	*read_to_buff(char *buffer, int fd)
 	return (buffer);
 }
 
-char	*get_line(char *buffer)
+char	*get_line(char *buffer, bool include_NL)
 {
 	char	*line;
 	int		i;
@@ -71,7 +71,11 @@ char	*get_line(char *buffer)
 		line[i] = buffer[i];
 		i++;
 		if (line[i - 1] == '\n')
+		{
+			if(!include_NL)
+				line[i - 1] = '\0';
 			break ;
+		}
 	}
 	line[i] = '\0';
 	return (line);

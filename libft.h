@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: walord <walord@student.42.fr>              +#+  +:+       +#+        */
+/*   By: bplante <bplante@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 13:51:05 by bplante           #+#    #+#             */
-/*   Updated: 2023/10/13 21:46:50 by walord           ###   ########.fr       */
+/*   Updated: 2023/10/20 02:01:42 by bplante          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <stdarg.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdbool.h>
 
 int					ft_isalpha(int c);
 int					ft_isdigit(int c);
@@ -100,6 +101,6 @@ char		*specifier_selector(va_list args, char c);
 
 # define BUFFER_SIZE 20
 
-char	*get_next_line(int fd);
+char	*get_next_line(int fd, bool include_NL);
 char	*ft_strjoin_free(char *s1, char *s2);
 #endif

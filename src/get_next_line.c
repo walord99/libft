@@ -6,7 +6,7 @@
 /*   By: bplante <bplante@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 10:18:33 by bplante           #+#    #+#             */
-/*   Updated: 2023/10/20 19:10:33 by bplante          ###   ########.fr       */
+/*   Updated: 2023/10/26 02:12:42 by bplante          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ char	*get_line(char *buffer, bool include_NL)
 		i++;
 		if (line[i - 1] == '\n')
 		{
-			if(!include_NL)
+			if (!include_NL)
 				line[i - 1] = '\0';
 			break ;
 		}
@@ -84,8 +84,7 @@ char	*get_line(char *buffer, bool include_NL)
 char	*remove_line(char *buffer)
 {
 	char	*new_buff;
-	char	*next_line;
-	int		i;
+	char	*next_line;;
 
 	if (ft_strlen(buffer) == 0 || !ft_strchr(buffer, '\n'))
 	{
@@ -93,16 +92,15 @@ char	*remove_line(char *buffer)
 		return (NULL);
 	}
 	next_line = ft_strchr(buffer, '\n') + 1;
+	if (ft_strlen(next_line) == 0)
+	{
+		free(buffer);
+		return (NULL);
+	}
 	new_buff = malloc(ft_strlen(next_line) + 1);
 	if (!new_buff)
 		return (NULL);
-	i = 0;
-	while (next_line[i])
-	{
-		new_buff[i] = next_line[i];
-		i++;
-	}
-	new_buff[i] = '\0';
+	ft_strlcpy(new_buff, next_line, ft_strlen(next_line) + 1);
 	free(buffer);
 	return (new_buff);
 }

@@ -6,7 +6,7 @@
 /*   By: bplante <bplante@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 10:18:33 by bplante           #+#    #+#             */
-/*   Updated: 2023/10/26 02:12:42 by bplante          ###   ########.fr       */
+/*   Updated: 2023/10/26 15:24:58 by bplante          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,15 +84,12 @@ char	*get_line(char *buffer, bool include_NL)
 char	*remove_line(char *buffer)
 {
 	char	*new_buff;
-	char	*next_line;;
+	char	*next_line;
 
-	if (ft_strlen(buffer) == 0 || !ft_strchr(buffer, '\n'))
-	{
-		free(buffer);
-		return (NULL);
-	}
-	next_line = ft_strchr(buffer, '\n') + 1;
-	if (ft_strlen(next_line) == 0)
+	next_line = ft_strchr(buffer, '\n');
+	if(next_line)
+		next_line++;
+	if (ft_strlen(buffer) == 0 || !ft_strchr(buffer, '\n') || *next_line == 0)
 	{
 		free(buffer);
 		return (NULL);

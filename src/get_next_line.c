@@ -72,7 +72,7 @@ char	*get_line(char *buffer, bool include_NL)
 		i++;
 		if (line[i - 1] == '\n')
 		{
-			if (!include_NL)
+			if(!include_NL)
 				line[i - 1] = '\0';
 			break ;
 		}
@@ -85,19 +85,24 @@ char	*remove_line(char *buffer)
 {
 	char	*new_buff;
 	char	*next_line;
+	int		i;
 
-	next_line = ft_strchr(buffer, '\n');
-	if(next_line)
-		next_line++;
-	if (ft_strlen(buffer) == 0 || !ft_strchr(buffer, '\n') || *next_line == 0)
+	if (ft_strlen(buffer) == 0 || !ft_strchr(buffer, '\n'))
 	{
 		free(buffer);
 		return (NULL);
 	}
+	next_line = ft_strchr(buffer, '\n') + 1;
 	new_buff = malloc(ft_strlen(next_line) + 1);
 	if (!new_buff)
 		return (NULL);
-	ft_strlcpy(new_buff, next_line, ft_strlen(next_line) + 1);
+	i = 0;
+	while (next_line[i])
+	{
+		new_buff[i] = next_line[i];
+		i++;
+	}
+	new_buff[i] = '\0';
 	free(buffer);
 	return (new_buff);
 }

@@ -46,7 +46,7 @@ char	*read_to_buff(char *buffer, int fd)
 			return (NULL);
 		}
 		read_buffer[read_check] = '\0';
-		buffer = ft_strjoin(buffer, read_buffer);
+		buffer = ft_strjoin_free(buffer, read_buffer);
 	}
 	free(read_buffer);
 	return (buffer);
@@ -85,7 +85,6 @@ char	*remove_line(char *buffer)
 {
 	char	*new_buff;
 	char	*next_line;
-	int		i;
 
 	if (ft_strlen(buffer) == 0 || !ft_strchr(buffer, '\n'))
 	{
@@ -96,13 +95,7 @@ char	*remove_line(char *buffer)
 	new_buff = malloc(ft_strlen(next_line) + 1);
 	if (!new_buff)
 		return (NULL);
-	i = 0;
-	while (next_line[i])
-	{
-		new_buff[i] = next_line[i];
-		i++;
-	}
-	new_buff[i] = '\0';
+	ft_strlcpy(new_buff, next_line, ft_strlen(next_line) + 1);
 	free(buffer);
 	return (new_buff);
 }

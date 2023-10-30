@@ -6,16 +6,16 @@
 /*   By: bplante <bplante@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 13:51:05 by bplante           #+#    #+#             */
-/*   Updated: 2023/10/20 02:01:42 by bplante          ###   ########.fr       */
+/*   Updated: 2023/10/30 19:30:35 by bplante          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <stdarg.h>
+# include <stdbool.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include <stdbool.h>
 
 int					ft_isalpha(int c);
 int					ft_isdigit(int c);
@@ -72,35 +72,39 @@ void				ft_lstdelone(t_list *lst, void (*del)(void *));
 t_list				*ft_lstclear(t_list *lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *));
+t_list				*ft_lstfind_one(t_list *list, bool (*equal)(void *, void *),
+						void *data);
+t_list				*ft_lstdel_element(t_list *list, t_list *node,
+						void (*del)(void *));
 
 typedef struct s_options
 {
-	char	flag;
-	int		width;
-	int		precision;
-	char	specifier;
-}			t_options;
+	char			flag;
+	int				width;
+	int				precision;
+	char			specifier;
+}					t_options;
 
-int			ft_printf(const char *str, ...);
-int			get_flag(char *str, t_options *options);
-int			get_width(char *str, t_options *options);
-int			get_precision(char *str, t_options *options);
-int			get_specifier(char *str, t_options *options);
-int			get_options(char *str, t_options *options);
-int			number_char_amount(int n);
-char		*char_to_str(char c);
-char		*arg_to_int(int i);
-char		*arg_to_str(char *str);
-char		*arg_to_uint_hex(unsigned long num, int is_caps);
-char		num_to_hex(int num, int is_caps);
-char		*arg_to_uint(unsigned int num);
-char		*arg_to_ptr(void *ptr);
-int			ft_putstr_e(char *str, t_options *options);
-int			format(va_list args, char **str, int char_amount);
-char		*specifier_selector(va_list args, char c);
+int					ft_printf(const char *str, ...);
+int					get_flag(char *str, t_options *options);
+int					get_width(char *str, t_options *options);
+int					get_precision(char *str, t_options *options);
+int					get_specifier(char *str, t_options *options);
+int					get_options(char *str, t_options *options);
+int					number_char_amount(int n);
+char				*char_to_str(char c);
+char				*arg_to_int(int i);
+char				*arg_to_str(char *str);
+char				*arg_to_uint_hex(unsigned long num, int is_caps);
+char				num_to_hex(int num, int is_caps);
+char				*arg_to_uint(unsigned int num);
+char				*arg_to_ptr(void *ptr);
+int					ft_putstr_e(char *str, t_options *options);
+int					format(va_list args, char **str, int char_amount);
+char				*specifier_selector(va_list args, char c);
 
 # define BUFFER_SIZE 20
 
-char	*get_next_line(int fd, bool include_NL);
-char	*ft_strjoin_free(char *s1, char *s2);
+char				*get_next_line(int fd, bool include_NL);
+char				*ft_strjoin_free(char *s1, char *s2);
 #endif

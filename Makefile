@@ -6,7 +6,7 @@
 #    By: bplante <bplante@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/04 12:49:55 by Ben               #+#    #+#              #
-#    Updated: 2023/10/30 19:30:50 by bplante          ###   ########.fr        #
+#    Updated: 2023/11/02 14:04:56 by bplante          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -69,12 +69,15 @@ PRINT			=	ft_printf.c \
 GET_NEXT		=	get_next_line.c \
 					get_next_line_utils.c
 
+LIB			= 	arrlen.c
+
 OBJ_FT			=	$(addprefix libft/, $(FT:.c=.o))
 OBJ_LST			=	$(addprefix lst/, $(LST:.c=.o))
 OBJ_PRINT		=	$(addprefix printf/, $(PRINT:.c=.o))
 OBJ_GET_NEXT	=	$(addprefix get_next_line/, $(GET_NEXT:.c=.o))
+OBJ_LIB			=	$(addprefix lib/, $(LIB:.c=.o))
 
-OBJS_NO_DIR = $(OBJ_FT) $(OBJ_LST) $(OBJ_PRINT) $(OBJ_GET_NEXT)
+OBJS_NO_DIR = $(OBJ_FT) $(OBJ_LST) $(OBJ_PRINT) $(OBJ_GET_NEXT) $(OBJ_LIB)
 OBJS = $(addprefix $(OBJ_DIR)/, $(OBJS_NO_DIR))
 NAME			=	libft.a
 CFLAGS			=	-Wall -Werror -Wextra
@@ -95,6 +98,7 @@ $(OBJ_DIR):
 	mkdir -p $(OBJ_DIR)/lst
 	mkdir -p $(OBJ_DIR)/printf
 	mkdir -p $(OBJ_DIR)/get_next_line
+	mkdir -p $(OBJ_DIR)/lib
 	
 
 clean:

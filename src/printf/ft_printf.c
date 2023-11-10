@@ -6,24 +6,46 @@
 /*   By: bplante <bplante@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 14:16:27 by bplante           #+#    #+#             */
-/*   Updated: 2023/05/23 11:55:53 by bplante          ###   ########.fr       */
+/*   Updated: 2023/11/10 03:01:58 by bplante          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static int	print(const char *str, int fd, va_list args);
+
 int	ft_printf(const char *str, ...)
 {
-	int		char_amount;
 	va_list	args;
+	int		ret;
+
+	va_start(args, str);
+	ret = print(str, 1, args);
+	va_end(args);
+	return (ret);
+}
+
+int	ft_printf_fd(const char *str, int fd, ...)
+{
+	va_list	args;
+	int		ret;
+
+	va_start(args, fd);
+	ret = print(str, fd, args);
+	va_end(args);
+	return (ret);
+}
+
+int	print(const char *str, int fd, va_list args)
+{
+	int	char_amount;
 
 	char_amount = 0;
-	va_start(args, str);
 	while (*str)
 	{
 		if (*str != '%')
 		{
-			if (write(1, str, 1) == -1)
+			if (write(fd, str, 1) == -1)
 				return (-1);
 			char_amount++;
 		}
@@ -36,7 +58,6 @@ int	ft_printf(const char *str, ...)
 		}
 		str++;
 	}
-	va_end(args);
 	return (char_amount);
 }
 

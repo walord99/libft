@@ -6,7 +6,7 @@
 /*   By: bplante <bplante@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 13:51:05 by bplante           #+#    #+#             */
-/*   Updated: 2023/11/10 02:22:52 by bplante          ###   ########.fr       */
+/*   Updated: 2023/11/10 03:00:34 by bplante          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,7 @@ typedef struct s_options
 }					t_options;
 
 int					ft_printf(const char *str, ...);
+int					ft_printf_fd(const char *str, int fd, ...);
 int					get_flag(char *str, t_options *options);
 int					get_width(char *str, t_options *options);
 int					get_precision(char *str, t_options *options);

@@ -6,7 +6,7 @@
 /*   By: bplante <bplante@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 13:51:05 by bplante           #+#    #+#             */
-/*   Updated: 2023/11/10 02:11:00 by bplante          ###   ########.fr       */
+/*   Updated: 2023/11/10 02:22:52 by bplante          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,4 +110,5 @@ char				*get_next_line(int fd, bool include_NL);
 char				*ft_strjoin_free(char *s1, char *s2);
 
 int					ptr_arrlen(void **arr);
+char				*get_env(char **env, char *key);
 #endif

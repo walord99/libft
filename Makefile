@@ -6,7 +6,7 @@
 #    By: bplante <bplante@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/04 12:49:55 by Ben               #+#    #+#              #
-#    Updated: 2023/11/10 02:10:40 by bplante          ###   ########.fr        #
+#    Updated: 2023/11/10 02:23:05 by bplante          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,7 +70,8 @@ PRINT			=	ft_printf.c \
 GET_NEXT		=	get_next_line.c \
 					get_next_line_utils.c
 
-LIB			= 	arrlen.c
+LIB				= 	arrlen.c \
+					get_env.c
 
 OBJ_FT			=	$(addprefix libft/, $(FT:.c=.o))
 OBJ_LST			=	$(addprefix lst/, $(LST:.c=.o))

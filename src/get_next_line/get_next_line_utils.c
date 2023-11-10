@@ -3,16 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: walord <walord@student.42.fr>              +#+  +:+       +#+        */
+/*   By: bplante <bplante@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 10:18:37 by bplante           #+#    #+#             */
-/*   Updated: 2023/10/13 20:54:22 by walord           ###   ########.fr       */
+/*   Updated: 2023/11/10 04:11:11 by bplante          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin_free(char *s1, char *s2)
+static void free_f(char *s1, char *s2, int f)
+{
+	if ((f & FREE_S1) == FREE_S1)
+		free(s1);
+	if ((f & FREE_S2) == FREE_S2)
+		free(s2);
+}
+
+char	*ft_strjoin_free(char *s1, char *s2, int f)
 {
 	char	*str;
 	int		i;
@@ -24,11 +32,8 @@ char	*ft_strjoin_free(char *s1, char *s2)
 	i = 0;
 	if (s1)
 	{
-		while (s1[i])
-		{
-			str[i] = s1[i];
-			i++;
-		}
+		while (s1[i++])
+			str[i-1] = s1[i-1];
 	}
 	if (s2)
 	{
@@ -37,6 +42,6 @@ char	*ft_strjoin_free(char *s1, char *s2)
 			str[i++] = s2[j++];
 	}
 	str[i] = '\0';
-	free(s1);
+	free_f(s1, s2, f);
 	return (str);
 }

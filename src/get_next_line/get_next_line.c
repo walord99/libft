@@ -6,7 +6,7 @@
 /*   By: bplante <bplante@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 10:18:33 by bplante           #+#    #+#             */
-/*   Updated: 2023/11/10 02:15:40 by bplante          ###   ########.fr       */
+/*   Updated: 2023/11/10 04:10:30 by bplante          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ char	*read_to_buff(char *buffer, int fd)
 			return (NULL);
 		}
 		read_buffer[read_check] = '\0';
-		buffer = ft_strjoin_free(buffer, read_buffer);
+		buffer = ft_strjoin_free(buffer, read_buffer, FREE_S1);
 	}
 	free(read_buffer);
 	return (buffer);

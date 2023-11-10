@@ -6,7 +6,7 @@
 /*   By: bplante <bplante@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 13:51:05 by bplante           #+#    #+#             */
-/*   Updated: 2023/11/10 03:14:58 by bplante          ###   ########.fr       */
+/*   Updated: 2023/11/10 04:07:43 by bplante          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,8 +107,12 @@ char				*specifier_selector(va_list args, char c);
 
 # define BUFFER_SIZE 20
 
+# define FREE_S1 1
+# define FREE_S2 2
+# define FREE_ALL 3
+
 char				*get_next_line(int fd, bool include_NL);
-char				*ft_strjoin_free(char *s1, char *s2);
+char				*ft_strjoin_free(char *s1, char *s2, int f);
 
 int					tab_len(void **arr);
 void				free_tab(void **arr, void (del)(void *));

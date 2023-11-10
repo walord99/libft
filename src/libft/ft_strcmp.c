@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bplante <bplante@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/04 12:48:39 by Ben               #+#    #+#             */
-/*   Updated: 2023/11/10 02:15:20 by bplante          ###   ########.fr       */
+/*   Created: 2023/11/10 02:09:55 by bplante           #+#    #+#             */
+/*   Updated: 2023/11/10 02:14:17 by bplante          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstadd_back(t_list *lst, void *content)
+int	ft_strcmp(char *s1, char *s2)
 {
-	if (!lst)
-		lst = ft_lstnew(content);
-	else
-		ft_lstlast(lst)->next = ft_lstnew(content);
-	return (lst);
+	size_t	i;
+
+	i = 0;
+	if (!s1)
+		return (1);
+	while (s1[i] || s2[i])
+	{
+		if (s1[i] != s2[i])
+			return (s1[i] - s2[i]);
+		i++;
+	}
+	return (0);
 }

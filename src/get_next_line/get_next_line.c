@@ -6,7 +6,7 @@
 /*   By: bplante <bplante@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 10:18:33 by bplante           #+#    #+#             */
-/*   Updated: 2023/10/26 15:24:58 by bplante          ###   ########.fr       */
+/*   Updated: 2023/11/10 02:15:40 by bplante          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ char	*get_line(char *buffer, bool include_NL)
 		i++;
 		if (line[i - 1] == '\n')
 		{
-			if(!include_NL)
+			if (!include_NL)
 				line[i - 1] = '\0';
 			break ;
 		}

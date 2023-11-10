@@ -6,7 +6,7 @@
 #    By: bplante <bplante@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/04 12:49:55 by Ben               #+#    #+#              #
-#    Updated: 2023/11/02 14:04:56 by bplante          ###   ########.fr        #
+#    Updated: 2023/11/10 02:10:40 by bplante          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,7 @@ FT				=	ft_bzero.c \
 					ft_tolower.c \
 					ft_strchr.c \
 					ft_strrchr.c \
+					ft_strcmp.c \
 					ft_strncmp.c \
 					ft_memchr.c \
 					ft_memcmp.c \

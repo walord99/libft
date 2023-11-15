@@ -6,7 +6,7 @@
 /*   By: bplante <bplante@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 13:51:05 by bplante           #+#    #+#             */
-/*   Updated: 2023/11/10 04:07:43 by bplante          ###   ########.fr       */
+/*   Updated: 2023/11/10 06:19:31 by bplante          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,8 +101,8 @@ char				*arg_to_uint_hex(unsigned long num, int is_caps);
 char				num_to_hex(int num, int is_caps);
 char				*arg_to_uint(unsigned int num);
 char				*arg_to_ptr(void *ptr);
-int					ft_putstr_e(char *str, t_options *options);
-int					format(va_list args, char **str, int char_amount);
+int					ft_putstr_e(char *str, t_options *options, int fd);
+int					format(va_list args, char **str, int char_amount, int fd);
 char				*specifier_selector(va_list args, char c);
 
 # define BUFFER_SIZE 20

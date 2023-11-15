@@ -6,7 +6,7 @@
 /*   By: bplante <bplante@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 02:22:13 by bplante           #+#    #+#             */
-/*   Updated: 2023/11/10 02:22:32 by bplante          ###   ########.fr       */
+/*   Updated: 2023/11/10 04:41:55 by bplante          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*get_env(char **env, char *key)
 		if (ft_strcmp(sub_str, key) == 0)
 		{
 			free(sub_str);
-			return (env[i] + j + 1);
+			return (&env[i][j] + 1);
 		}
 		free(sub_str);
 		i++;

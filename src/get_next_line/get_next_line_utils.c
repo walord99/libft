@@ -6,7 +6,7 @@
 /*   By: bplante <bplante@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 10:18:37 by bplante           #+#    #+#             */
-/*   Updated: 2023/11/10 04:11:11 by bplante          ###   ########.fr       */
+/*   Updated: 2023/11/10 05:11:38 by bplante          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ char	*ft_strjoin_free(char *s1, char *s2, int f)
 	{
 		while (s1[i++])
 			str[i-1] = s1[i-1];
+		i -= 1;
 	}
 	if (s2)
 	{

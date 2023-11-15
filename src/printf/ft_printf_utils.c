@@ -6,13 +6,13 @@
 /*   By: bplante <bplante@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 11:34:42 by bplante           #+#    #+#             */
-/*   Updated: 2023/05/23 11:55:52 by bplante          ###   ########.fr       */
+/*   Updated: 2023/11/10 06:19:48 by bplante          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_putstr_e(char *str, t_options *options)
+int	ft_putstr_e(char *str, t_options *options, int fd)
 {
 	int	i;
 
@@ -21,7 +21,7 @@ int	ft_putstr_e(char *str, t_options *options)
 		return (write(1, &str[0], 1));
 	while (str[i])
 	{
-		if (write(1, str + i, 1) == -1)
+		if (write(fd, str + i, 1) == -1)
 			return (-1);
 		i++;
 	}

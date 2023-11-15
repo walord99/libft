@@ -6,7 +6,7 @@
 /*   By: bplante <bplante@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 14:16:27 by bplante           #+#    #+#             */
-/*   Updated: 2023/11/10 03:01:58 by bplante          ###   ########.fr       */
+/*   Updated: 2023/11/10 06:19:01 by bplante          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	print(const char *str, int fd, va_list args)
 		else
 		{
 			str++;
-			char_amount = format(args, (char **)&str, char_amount);
+			char_amount = format(args, (char **)&str, char_amount, fd);
 			if (char_amount == -1)
 				return (-1);
 		}
@@ -61,7 +61,7 @@ int	print(const char *str, int fd, va_list args)
 	return (char_amount);
 }
 
-int	format(va_list args, char **str, int char_amount)
+int	format(va_list args, char **str, int char_amount, int fd)
 {
 	char		*output;
 	int			i;
@@ -79,7 +79,7 @@ int	format(va_list args, char **str, int char_amount)
 		free(options);
 		return (-1);
 	}
-	i = ft_putstr_e(output, options);
+	i = ft_putstr_e(output, options, fd);
 	free(options);
 	free(output);
 	if (i == -1)

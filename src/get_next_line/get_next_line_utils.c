@@ -6,13 +6,13 @@
 /*   By: bplante <bplante@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 10:18:37 by bplante           #+#    #+#             */
-/*   Updated: 2023/11/10 05:11:38 by bplante          ###   ########.fr       */
+/*   Updated: 2023/11/15 16:47:35 by bplante          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void free_f(char *s1, char *s2, int f)
+static void	free_f(char *s1, char *s2, int f)
 {
 	if ((f & FREE_S1) == FREE_S1)
 		free(s1);
@@ -33,7 +33,7 @@ char	*ft_strjoin_free(char *s1, char *s2, int f)
 	if (s1)
 	{
 		while (s1[i++])
-			str[i-1] = s1[i-1];
+			str[i - 1] = s1[i - 1];
 		i -= 1;
 	}
 	if (s2)

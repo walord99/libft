@@ -6,7 +6,7 @@
 #    By: bplante <bplante@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/04 12:49:55 by Ben               #+#    #+#              #
-#    Updated: 2023/11/21 07:59:01 by bplante          ###   ########.fr        #
+#    Updated: 2023/11/21 08:19:06 by bplante          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,7 +61,8 @@ LST				=	ft_lstnew_bonus.c \
 					ft_lstmap_bonus.c \
 					ft_lstfind_one.c \
 					ft_lstdel_element.c \
-					ft_lst_to_tab.c
+					ft_lst_to_tab.c \
+					ft_lst_destory_nodes.c
 
 PRINT			=	ft_printf.c \
 					ft_printf_utils.c \

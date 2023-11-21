@@ -6,7 +6,7 @@
 /*   By: bplante <bplante@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 13:51:05 by bplante           #+#    #+#             */
-/*   Updated: 2023/11/21 08:04:30 by bplante          ###   ########.fr       */
+/*   Updated: 2023/11/21 08:17:50 by bplante          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,7 @@ t_list				*ft_lstfind_one(t_list *list, bool (*equal)(void *, void *),
 t_list				*ft_lstdel_element(t_list *list, t_list *node,
 						void (*del)(void *));
 void				*lst_to_tab(t_list *list);
+void				lst_destroy_nodes(t_list *list);
 
 typedef struct s_options
 {

@@ -6,7 +6,7 @@
 /*   By: bplante <bplante@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 13:51:05 by bplante           #+#    #+#             */
-/*   Updated: 2023/11/10 06:19:31 by bplante          ###   ########.fr       */
+/*   Updated: 2023/11/21 08:04:30 by bplante          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ t_list				*ft_lstfind_one(t_list *list, bool (*equal)(void *, void *),
 						void *data);
 t_list				*ft_lstdel_element(t_list *list, t_list *node,
 						void (*del)(void *));
+void				*lst_to_tab(t_list *list);
 
 typedef struct s_options
 {
@@ -115,6 +116,6 @@ char				*get_next_line(int fd, bool include_NL);
 char				*ft_strjoin_free(char *s1, char *s2, int f);
 
 int					tab_len(void **arr);
-void				free_tab(void **arr, void (del)(void *));
+void				free_tab(void **arr, void(del)(void *));
 char				*get_env(char **env, char *key);
 #endif

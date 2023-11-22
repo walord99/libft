@@ -6,7 +6,7 @@
 /*   By: bplante <bplante@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 13:51:05 by bplante           #+#    #+#             */
-/*   Updated: 2023/11/21 08:17:50 by bplante          ###   ########.fr       */
+/*   Updated: 2023/11/22 15:24:26 by bplante          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,6 +117,6 @@ char				*get_next_line(int fd, bool include_NL);
 char				*ft_strjoin_free(char *s1, char *s2, int f);
 
 int					tab_len(void **arr);
-void				free_tab(void **arr, void(del)(void *));
+void				free_tab(void **arr, void (*del)(void *));
 char				*get_env(char **env, char *key);
 #endif

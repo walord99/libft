@@ -81,9 +81,9 @@ t_list				*ft_lstfind_one(t_list *list, bool (*equal)(void *, void *),
  * pointer to the new list start
  * 
  * @param list List pointer
- * @param node 
- * @param del 
- * @return t_list* 
+ * @param node
+ * @param del
+ * @return t_list*
  */
 t_list				*ft_lstdel_element(t_list *list, t_list *node,
 						void (*del)(void *));
@@ -91,7 +91,7 @@ t_list				*ft_lstdel_element(t_list *list, t_list *node,
 /**
  * @brief Return an pointer array to the contents of the list.
  * Returns NULL if list was Empty or an error has occured
- * 
+ *
  * @param list List pointer
  * @return Pointer array
  */
@@ -99,7 +99,7 @@ void				*lst_to_tab(t_list *list);
 
 /**
  * @brief Deletes all the nodes and keep content allocated
- * 
+ *
  * @param list List pointer
  */
 void				lst_destroy_nodes(t_list *list);
@@ -114,20 +114,20 @@ typedef struct s_options
 
 /**
  * @brief Prints a formated string to STDOUT
- * 
+ *
  * @param str Available formats: %cspdiux
- * @param ... 
+ * @param ...
  * @return The ammoount of character printed
  */
 int					ft_printf(const char *str, ...);
 
 /**
  * @brief Prints a formated string to the file descriptor
- * 
+ *
  * @param str Available formats: %cspdiux
  * @param fd File descriptor
- * @param ... 
- * @return The ammoount of character written 
+ * @param ...
+ * @return The ammoount of character written
  */
 
 int					ft_printf_fd(const char *str, int fd, ...);
@@ -153,7 +153,7 @@ char				*specifier_selector(va_list args, char c);
 /**
  * @brief Returns an allocated string containing the next line from the fd.
  * Returns NULL if reached EOF or an error has occured
- * 
+ *
  * @param fd File descriptor
  * @param include_NL If the function should include the NL character if present
  * @return The line
@@ -167,7 +167,7 @@ char				*get_next_line(int fd, bool include_NL);
 /**
  * @brief Joins 2 strings with the possibility of automatically freeing.
  * Use ft_strjoin if not freeing anything
- * 
+ *
  * @param s1 First string
  * @param s2 Second string
  * @param options FREE_S1 FREE_S2 FREE_ALL
@@ -177,7 +177,7 @@ char				*ft_strjoin_free(char *s1, char *s2, int options);
 
 /**
  * @brief Returns the lenght of a NULL terminated pointer array
- * 
+ *
  * @param arr Array pointer
  * @return Lenght
  */
@@ -185,14 +185,14 @@ int					tab_len(void **arr);
 
 /**
  * @brief Free a NULL terminated pointer array
- * 
+ *
  * @param arr Array pointer
  * @param del Function pointer to delete contained struct
  */
 void				free_tab(void **arr, void (*del)(void *));
 /**
  * @brief Get a value from the environment according to the key
- * 
+ *
  * @param env Environment array
  * @param key The key
  * @return String containing the value

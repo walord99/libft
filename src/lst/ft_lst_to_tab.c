@@ -6,7 +6,7 @@
 /*   By: bplante <bplante@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 07:58:28 by bplante           #+#    #+#             */
-/*   Updated: 2023/11/25 13:46:30 by bplante          ###   ########.fr       */
+/*   Updated: 2023/12/03 17:28:12 by bplante          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*lst_to_tab(t_list *list)
 	int		i;
 
 	if (!list)
-		return NULL;
+		return (NULL);
 	tab = ft_calloc(ft_lstsize(list) + 1, sizeof(void *));
 	if (!tab)
 		return (NULL);

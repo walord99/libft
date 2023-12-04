@@ -65,21 +65,78 @@ typedef struct s_list
 }					t_list;
 
 t_list				*ft_lstnew(void *content);
+
+/**
+ * @brief Allocates a new node,
+	add's it at the start and return the pointer to the first element
+ *
+ * @param lst List pointer, NULL if there is no list yet
+ * @param content Content to be added
+ * @return First element to the list
+ */
 t_list				*ft_lstadd_front(t_list *list, void *content);
+
+/**
+ * @brief Get the last node of the list, NULL if none or an error has occured
+ * 
+ * @param lst List pointer
+ * @return Last node
+ */
 t_list				*ft_lstlast(t_list *lst);
+
+/**
+ * @brief Get the size of the list, 0 if NULL
+ * 
+ * @param lst List pointer
+ * @return Size
+ */
 int					ft_lstsize(t_list *lst);
+
+/**
+ * @brief Allocates a new node,
+	add's it to the end and return the pointer to the first element
+ *
+ * @param lst List pointer, NULL if there is no list yet
+ * @param content Content to be added
+ * @return First element to the list
+ */
 t_list				*ft_lstadd_back(t_list *lst, void *content);
+
+/**
+ * @brief Deletes a node and it's content without relinking
+ *
+ * @param lst List pointer
+ * @param del Function to delete content
+ */
 void				ft_lstdelone(t_list *lst, void (*del)(void *));
-t_list				*ft_lstclear(t_list *lst, void (*del)(void *));
+
+/**
+ * @brief Deletes a list with its content
+ *
+ * @param lst List Pointer
+ * @param del
+ * @return t_list*
+ */
+void				ft_lstclear(t_list *lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *));
+
+/**
+ * @brief Finds a node when the equal returns true.
+ * Returns NULL when none is found or an error has occured
+ *
+ * @param list List pointer
+ * @param equal Function to compare contents
+ * @param data The content you want it to be equal to
+ * @return The node found
+ */
 t_list				*ft_lstfind_one(t_list *list, bool (*equal)(void *, void *),
 						void *data);
 
 /**
- * @brief Remove a node and it's content from the list and return a 
+ * @brief Remove a node and it's content from the list and return a
  * pointer to the new list start
- * 
+ *
  * @param list List pointer
  * @param node
  * @param del
@@ -90,7 +147,7 @@ t_list				*ft_lstdel_element(t_list *list, t_list *node,
 
 /**
  * @brief Return an pointer array to the contents of the list.
- * Returns NULL if list was Empty or an error has occured
+ * Returns NULL if list was Empty or an error has occured. Does no copy content.
  *
  * @param list List pointer
  * @return Pointer array

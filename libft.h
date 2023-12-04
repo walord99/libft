@@ -6,7 +6,7 @@
 /*   By: bplante <bplante@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 13:51:05 by bplante           #+#    #+#             */
-/*   Updated: 2023/12/01 14:59:38 by bplante          ###   ########.fr       */
+/*   Updated: 2023/12/04 14:11:10 by bplante          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,8 +77,8 @@ t_list				*ft_lstfind_one(t_list *list, bool (*equal)(void *, void *),
 						void *data);
 
 /**
- * @brief Remove a node and it's content from the list and return a pointer to the 
- * new list start
+ * @brief Remove a node and it's content from the list and return a 
+ * pointer to the new list start
  * 
  * @param list List pointer
  * @param node 

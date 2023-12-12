@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bplante <bplante@student.42.fr>            +#+  +:+       +#+        */
+/*   By: bplante/Walord <benplante99@gmail.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 13:51:05 by bplante           #+#    #+#             */
-/*   Updated: 2023/12/04 14:11:10 by bplante          ###   ########.fr       */
+/*   Updated: 2023/12/12 02:00:06 by bplante/Wal      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ char				*ft_strnstr(const char *heystack, const char *needle,
 int					ft_atoi(const char *str);
 void				*ft_calloc(size_t n, size_t size);
 char				*ft_strdup(const char *s1);
+char				*ft_strndup(char *str, int len);
 char				*ft_substr(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strtrim(char const *s1, char const *set);
@@ -78,7 +79,7 @@ t_list				*ft_lstadd_front(t_list *list, void *content);
 
 /**
  * @brief Get the last node of the list, NULL if none or an error has occured
- * 
+ *
  * @param lst List pointer
  * @return Last node
  */
@@ -86,7 +87,7 @@ t_list				*ft_lstlast(t_list *lst);
 
 /**
  * @brief Get the size of the list, 0 if NULL
- * 
+ *
  * @param lst List pointer
  * @return Size
  */

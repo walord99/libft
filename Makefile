@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bplante <bplante@student.42.fr>            +#+  +:+       +#+         #
+#    By: bplante/Walord <benplante99@gmail.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/04 12:49:55 by Ben               #+#    #+#              #
-#    Updated: 2023/11/21 08:19:06 by bplante          ###   ########.fr        #
+#    Updated: 2023/12/12 19:48:59 by bplante/Wal      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,6 +36,7 @@ FT				=	ft_bzero.c \
 					ft_atoi.c \
 					ft_calloc.c \
 					ft_strdup.c	\
+					ft_strndup.c \
 					ft_substr.c	\
 					ft_strjoin.c \
 					ft_strtrim.c \
@@ -66,7 +67,6 @@ LST				=	ft_lstnew_bonus.c \
 
 PRINT			=	ft_printf.c \
 					ft_printf_utils.c \
-					ft_printf_options.c \
 					ft_printf_convertion.c 
 
 GET_NEXT		=	get_next_line.c \
@@ -115,4 +115,6 @@ fclean : clean
 re: fclean all
 
 test:
-	echo $(OBJS)
+	gcc test.c libft.a -o test 
+
+.PHONY: test re clean fclean all

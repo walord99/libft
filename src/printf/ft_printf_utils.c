@@ -3,30 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bplante <bplante@student.42.fr>            +#+  +:+       +#+        */
+/*   By: bplante/Walord <benplante99@gmail.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 11:34:42 by bplante           #+#    #+#             */
-/*   Updated: 2023/11/10 06:19:48 by bplante          ###   ########.fr       */
+/*   Updated: 2023/12/12 01:45:27 by bplante/Wal      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-int	ft_putstr_e(char *str, t_options *options, int fd)
-{
-	int	i;
-
-	i = 0;
-	if (options->specifier == 'c')
-		return (write(1, &str[0], 1));
-	while (str[i])
-	{
-		if (write(fd, str + i, 1) == -1)
-			return (-1);
-		i++;
-	}
-	return (i);
-}
 
 int	number_char_amount(int n)
 {

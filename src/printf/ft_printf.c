@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bplante <bplante@student.42.fr>            +#+  +:+       +#+        */
+/*   By: bplante/Walord <benplante99@gmail.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 14:16:27 by bplante           #+#    #+#             */
-/*   Updated: 2023/11/10 06:19:01 by bplante          ###   ########.fr       */
+/*   Updated: 2023/12/12 19:47:52 by bplante/Wal      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,55 +36,61 @@ int	ft_printf_fd(const char *str, int fd, ...)
 	return (ret);
 }
 
-int	print(const char *str, int fd, va_list args)
+int	write_segments(t_list *segments, int fd)
 {
-	int	char_amount;
+	int		len;
+	char	*joined;
+	int		i;
+	t_list	*tmp;
 
-	char_amount = 0;
-	while (*str)
+	tmp = segments;
+	len = 0;
+	while (segments)
 	{
-		if (*str != '%')
-		{
-			if (write(fd, str, 1) == -1)
-				return (-1);
-			char_amount++;
-		}
-		else
-		{
-			str++;
-			char_amount = format(args, (char **)&str, char_amount, fd);
-			if (char_amount == -1)
-				return (-1);
-		}
-		str++;
+		len += ft_strlen((char *)segments->content);
+		segments = segments->next;
 	}
-	return (char_amount);
+	joined = ft_calloc(len + 1, sizeof(char));
+	if (!joined)
+		return (-1);
+	i = 0;
+	while (tmp)
+	{
+		ft_strlcpy(&joined[i], (char *)tmp->content, len + 1);
+		i += ft_strlen((char *)tmp->content);
+		tmp = tmp->next;
+	}
+	i = write(fd, joined, len);
+	free(joined);
+	return (i);
 }
 
-int	format(va_list args, char **str, int char_amount, int fd)
+int	print(const char *str, int fd, va_list args)
 {
-	char		*output;
-	int			i;
-	t_options	*options;
+	t_list	*segments;
+	int		i;
+	int		last_not_f;
 
-	options = ft_calloc(sizeof(t_options), 1);
-	if (!options)
-		return (-1);
-	if (get_options(*str, options) == -1)
-		return (-1);
-	*str = ft_strchr(*str, options->specifier);
-	output = specifier_selector(args, options->specifier);
-	if (!output)
+	last_not_f = 0;
+	segments = NULL;
+	i = 0;
+	while (str[i] != 0)
 	{
-		free(options);
-		return (-1);
+		while (str[i] != '%' && str[i] != 0)
+			i++;
+		segments = ft_lstadd_back(segments, ft_strndup((char *)&str[last_not_f],
+					i - last_not_f));
+		if (str[i] == '%')
+		{
+			segments = ft_lstadd_back(segments, specifier_selector(args, str[i
+						+ 1]));
+			i += 2;
+			last_not_f = i;
+		}
 	}
-	i = ft_putstr_e(output, options, fd);
-	free(options);
-	free(output);
-	if (i == -1)
-		return (-1);
-	return (char_amount + i);
+	i = write_segments(segments, fd);
+	ft_lstclear(segments, &free);
+	return (i);
 }
 
 char	*specifier_selector(va_list args, char c)

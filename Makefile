@@ -6,7 +6,7 @@
 #    By: bplante/Walord <benplante99@gmail.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/04 12:49:55 by Ben               #+#    #+#              #
-#    Updated: 2023/12/12 19:48:59 by bplante/Wal      ###   ########.fr        #
+#    Updated: 2023/12/17 14:22:44 by bplante/Wal      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -74,7 +74,8 @@ GET_NEXT		=	get_next_line.c \
 
 LIB				= 	tab_len.c \
 					free_tab.c \
-					get_env.c
+					get_env.c \
+					abs.c
 
 OBJ_FT			=	$(addprefix libft/, $(FT:.c=.o))
 OBJ_LST			=	$(addprefix lst/, $(LST:.c=.o))
@@ -92,20 +93,16 @@ OBJ_DIR			=	obj
 all : $(NAME)
 
 $(NAME) : $(OBJ_DIR) $(OBJS)
-	$(LIBC) $@ $(OBJS)
+	@$(LIBC) $@ $(OBJS)
+	@echo Linked
 
 $(OBJ_DIR)/%.o : src/%.c
-	$(CC) $(CFLAGS) -I. -c $< -o $@ -g
+	@$(CC) $(CFLAGS) -I. -c $< -o $@ -g
+	@echo $<
 
 $(OBJ_DIR):
-	mkdir -p $(OBJ_DIR)
-	mkdir -p $(OBJ_DIR)/libft
-	mkdir -p $(OBJ_DIR)/lst
-	mkdir -p $(OBJ_DIR)/printf
-	mkdir -p $(OBJ_DIR)/get_next_line
-	mkdir -p $(OBJ_DIR)/lib
+	mkdir -p $(OBJ_DIR)/libft $(OBJ_DIR)/lst $(OBJ_DIR)/printf $(OBJ_DIR)/get_next_line $(OBJ_DIR)/lib
 	
-
 clean:
 	rm -rf $(OBJ_DIR)
 	
@@ -114,7 +111,4 @@ fclean : clean
 
 re: fclean all
 
-test:
-	gcc test.c libft.a -o test 
-
-.PHONY: test re clean fclean all
+.PHONY: re clean fclean all

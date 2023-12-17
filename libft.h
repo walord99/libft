@@ -6,7 +6,7 @@
 /*   By: bplante/Walord <benplante99@gmail.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 13:51:05 by bplante           #+#    #+#             */
-/*   Updated: 2023/12/12 02:00:06 by bplante/Wal      ###   ########.fr       */
+/*   Updated: 2023/12/17 14:15:27 by bplante/Wal      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -248,6 +248,7 @@ int					tab_len(void **arr);
  * @param del Function pointer to delete contained struct
  */
 void				free_tab(void **arr, void (*del)(void *));
+
 /**
  * @brief Get a value from the environment according to the key
  *
@@ -256,4 +257,13 @@ void				free_tab(void **arr, void (*del)(void *));
  * @return String containing the value
  */
 char				*get_env(char **env, char *key);
+
+/**
+ * @brief Return the absolute value of an integer
+ * 
+ * @param i Int
+ * @return Absolute value
+ */
+int					abs(int i);
+
 #endif

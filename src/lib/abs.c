@@ -6,11 +6,11 @@
 /*   By: bplante/Walord <benplante99@gmail.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 14:12:26 by bplante/Wal       #+#    #+#             */
-/*   Updated: 2023/12/17 14:13:53 by bplante/Wal      ###   ########.fr       */
+/*   Updated: 2023/12/18 22:13:25 by bplante/Wal      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int abs(int i)
+int	abs(int i)
 {
-	return (i < 0) * (i * -1) + (i > 0) * i;
+	return ((i < 0) * (i * -1) + (i > 0) * i);
 }

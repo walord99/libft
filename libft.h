@@ -48,6 +48,7 @@ char				*ft_substr(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strtrim(char const *s1, char const *set);
 char				**ft_split(char const *s, char c);
+int					count_words(const char *str, char delemiter);
 char				*ft_itoa(int n);
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void				*ft_striteri(char *s, void (*f)(unsigned int, char *));
@@ -260,7 +261,7 @@ char				*get_env(char **env, char *key);
 
 /**
  * @brief Return the absolute value of an integer
- * 
+ *
  * @param i Int
  * @return Absolute value
  */

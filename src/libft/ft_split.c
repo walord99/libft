@@ -14,7 +14,6 @@
 #include <stdlib.h>
 
 static int	word_size(const char *str, char delemiter);
-static int	count_words(const char *str, char delemiter);
 static int	go_first_word(const char *str, char delemiter);
 static void	*free_arr(char **str);
 
@@ -46,7 +45,7 @@ char	**ft_split(char const *s, char c)
 	return (str_arr);
 }
 
-static int	count_words(const char *str, char delemiter)
+int	count_words(const char *str, char delemiter)
 {
 	size_t	i;
 	size_t	word_count;

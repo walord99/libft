@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bplante/Walord <benplante99@gmail.com>     +#+  +:+       +#+        */
+/*   By: bplante <benplante99@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 13:51:05 by bplante           #+#    #+#             */
-/*   Updated: 2023/12/17 14:15:27 by bplante/Wal      ###   ########.fr       */
+/*   Updated: 2024/03/18 21:26:20 by bplante          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -233,6 +233,7 @@ char				*get_next_line(int fd, bool include_NL);
  * @return Allocated new string
  */
 char				*ft_strjoin_free(char *s1, char *s2, int options);
+char				*ft_strjoin_va(int arg_count, ...);
 
 /**
  * @brief Returns the lenght of a NULL terminated pointer array
@@ -257,8 +258,7 @@ void				free_tab(void **arr, void (*del)(void *));
  * @param key The key
  * @return String containing the value
  */
-char				*get_env(char **env, char *key);
-
+const char			*get_env(char **env, char *key);
 /**
  * @brief Return the absolute value of an integer
  *

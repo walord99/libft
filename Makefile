@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bplante/Walord <benplante99@gmail.com>     +#+  +:+       +#+         #
+#    By: bplante <benplante99@gmail.com>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/04 12:49:55 by Ben               #+#    #+#              #
-#    Updated: 2023/12/17 14:22:44 by bplante/Wal      ###   ########.fr        #
+#    Updated: 2024/03/18 21:28:27 by bplante          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -75,7 +75,8 @@ GET_NEXT		=	get_next_line.c \
 LIB				= 	tab_len.c \
 					free_tab.c \
 					get_env.c \
-					abs.c
+					abs.c \
+					ft_strjoin_va.c
 
 OBJ_FT			=	$(addprefix libft/, $(FT:.c=.o))
 OBJ_LST			=	$(addprefix lst/, $(LST:.c=.o))

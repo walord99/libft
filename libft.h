@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bplante <benplante99@gmail.com>            +#+  +:+       +#+        */
+/*   By: bplante <bplante@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 13:51:05 by bplante           #+#    #+#             */
-/*   Updated: 2024/03/18 21:26:20 by bplante          ###   ########.fr       */
+/*   Updated: 2024/04/19 16:01:19 by bplante          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -266,5 +266,14 @@ const char			*get_env(char **env, char *key);
  * @return Absolute value
  */
 int					abs(int i);
+
+
+/**
+ * @brief Check if string is an int that doesnt overflow
+ * 
+ * @param str The string
+ * @return bool
+ */
+bool				is_string_valid_int(char *str);
 
 #endif

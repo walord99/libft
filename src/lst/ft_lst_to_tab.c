@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lst_to_tab.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bplante <bplante@student.42.fr>            +#+  +:+       +#+        */
+/*   By: bplante <benplante99@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 07:58:28 by bplante           #+#    #+#             */
-/*   Updated: 2023/12/04 14:11:32 by bplante          ###   ########.fr       */
+/*   Updated: 2024/05/20 13:44:43 by bplante          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ void	*lst_to_tab(t_list *list)
 	char	**tab;
 	int		i;
 
-	if (!list)
-		return (NULL);
 	tab = ft_calloc(ft_lstsize(list) + 1, sizeof(void *));
 	if (!tab)
 		return (NULL);

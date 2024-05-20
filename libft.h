@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bplante <bplante@student.42.fr>            +#+  +:+       +#+        */
+/*   By: bplante <benplante99@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 13:51:05 by bplante           #+#    #+#             */
-/*   Updated: 2024/04/19 16:01:19 by bplante          ###   ########.fr       */
+/*   Updated: 2024/05/20 13:44:31 by bplante          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -148,8 +148,8 @@ t_list				*ft_lstdel_element(t_list *list, t_list *node,
 						void (*del)(void *));
 
 /**
- * @brief Return an pointer array to the contents of the list.
- * Returns NULL if list was Empty or an error has occured. Does no copy content.
+ * @brief Return a NULL terminated pointer array to the contents of the list.
+ * Returns NULL if an error has occured. Does not copy content.
  *
  * @param list List pointer
  * @return Pointer array

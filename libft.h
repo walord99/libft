@@ -6,7 +6,7 @@
 /*   By: bplante <benplante99@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 13:51:05 by bplante           #+#    #+#             */
-/*   Updated: 2024/05/20 13:44:31 by bplante          ###   ########.fr       */
+/*   Updated: 2024/05/23 15:01:04 by bplante          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -267,10 +267,9 @@ const char			*get_env(char **env, char *key);
  */
 int					abs(int i);
 
-
 /**
  * @brief Check if string is an int that doesnt overflow
- * 
+ *
  * @param str The string
  * @return bool
  */
